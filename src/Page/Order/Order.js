@@ -40,18 +40,23 @@ function Seat(props) {
   const bookingSeat = (seat) => {
     let tmpSelectedSeat = selectedSeat;
     const index = tmpSelectedSeat.indexOf(seat);
-    console.log("ini bookingseat", index);
-    console.log("ini bookingseat", [...selectedSeat]);
+    console.log("ini bookingseat", seat);
     // console.log("ini bookingseat", tmpSelectedSeat.splice(index, 1));
     if (reservedSeat.indexOf(seat) < 0) {
       if (index < 0) {
         // this.setState({
-        setSelectedSeat([...seat, ...selectedSeat]);
+        setSelectedSeat([seat, ...selectedSeat]);
         // });
       } else {
         console.log("masuk else sini");
+        console.log("ini bookingseat..", tmpSelectedSeat.indexOf(seat));
         // this.setState({
-        setSelectedSeat(tmpSelectedSeat.splice(index, 1));
+        // setSelectedSeat([
+        //   ...selectedSeat.splice(tmpSelectedSeat.indexOf(seat), 1),
+        // ]);
+        setSelectedSeat([...selectedSeat.filter((item) => item !== seat)]);
+        // array.filter((item) => item !== elementToDelete);
+        // setSelectedSeat(delete ...selectedSeat[seat])
         // });
       }
     } else {

@@ -3,7 +3,8 @@ import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Book from "../src/Page/Book/Book";
 import Home from "../src/Page/Home/Home";
 import Schedule from "../src/Page/schedule/schedule";
-import Order from "./Page/OrderClass/OrderClass";
+// import Order from "./Page/OrderClass/OrderClass";
+import Order from "./Page/Order/Order";
 class App extends Component {
   render() {
     return (
